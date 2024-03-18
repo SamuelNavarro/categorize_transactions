@@ -59,4 +59,6 @@ The details are important to discuss with the Data Scientist and MLE.
 
 Now, moving forward, we would have to operate this in a production environment, the de code to produce and upsert this pipeline in sagemaker is in the `categorize_transaction.py` file.
 
-![[Details-20240317230102922.webp|524]]
+<img src="./images/sagemaker-pipeline.png" width="500"/>
+
+<img src="./images/cicd-email.png" width="700"/>
