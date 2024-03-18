@@ -7,7 +7,7 @@ Often times, the pipeline does not have a training step if the data scientist pe
 The pipeline should allow the user to provide a `json` file with configurations so that he/she can execute it. The configurations are the data locations and where should the artifacts should go.
 
 
-For this exercise, I created a mock for a pipeline that can train the model and save the transformers and model artifacts in the required location.
+For this exercise, I created a pipeline that can train the model and save the transformers and model artifacts in the required location.
 
 The Data Scientist only needs to provide the location of the data. In this case is already in the `artifacts` folder.
 
