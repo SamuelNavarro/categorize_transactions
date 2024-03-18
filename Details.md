@@ -12,9 +12,9 @@ For this exercise, I created a pipeline that can train the model and save the tr
 The Data Scientist only needs to provide the location of the data. In this case is already in the `artifacts` folder.
 
 The code mainly consists of three steps:
-1. Data pulling and transformations
-2. Training
-3. Predictions
+1. Data pulling and transformations: [data_pulling.py](https://github.com/SamuelNavarro/categorize_transactions/blob/main/categorize_transactions/data_pulling.py)
+2. Training: [train.py](https://github.com/SamuelNavarro/categorize_transactions/blob/main/categorize_transactions/train.py)
+3. Predictions: [predict.py](https://github.com/SamuelNavarro/categorize_transactions/blob/main/categorize_transactions/predict.py)
 
 One important thing is that we are missing a validation and evaluation step in this code. Also, most of the times you would need a lot of steps for merging and cleaning data with external resources.
 
@@ -22,7 +22,7 @@ To build the container and run it:
 1. `chmod +x build_docker.sh && ./build_docker.sh`
 2. `chmod +x run_pipeline_locally.sh && ./run_pipeline_locally.sh`
 
-The `hosted_pipeline.py` code was then used to create a Sagemaker Pipeline.
+The [hosted_pipeline.py](https://github.com/SamuelNavarro/categorize_transactions/blob/main/categorize_transactions/hosted_pipeline.py) code was then used to create a Sagemaker Pipeline.
 
 <img src="./images/sagemaker-pipeline.png" width="500"/>
 
