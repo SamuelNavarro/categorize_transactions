@@ -112,6 +112,3 @@ ENV/
 
 # mkdocs build dir
 site/
-
-*.ipynb
-*.obsidian

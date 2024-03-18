@@ -18,6 +18,8 @@ I produced a dummy model trained on the data provided. This of course has a data
 - Logging added: hvae found that is mthe most useful thing for debugging and understanding what happened in the pipeline.
 - test, using pytest-mock, and pytest, and pytest-cov. (EXPAND ON THE TESTING)Why the mockers, etc.
 - Explain why the usage of the cookiecutter. It gives the goodies on the tox, github actions, ISSUEE templates and so on.
+- Mention something about argsparse at least. and how this would be needed for autotrain with configurations.
+
 
 1. One important thing is that most of the times the data is not clean in the sense that there are duplicates and things like that, but for a production machine learning pipeline you would want to test that everytime.
 
