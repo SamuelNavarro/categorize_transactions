@@ -26,7 +26,13 @@ The `hosted_pipeline.py` code was then used to create a Sagemaker Pipeline.
 
 <img src="./images/sagemaker-pipeline.png" width="500"/>
 
-For the sake of the exercise, we also allowed the use of 'local' storage so the user can see the output in the filesystem.
+This showcases that dependency between the steps. For the local run, this is stated in the `entrypoint.sh` file, in which the run the files in the desired order.
+
+For the sake of the exercise, I also allowed the use of `local` storage so the user can see the output in the local filesystem.
+
+
+You will see the pickle files in the `artifacts` directory.
+
 
 
 The process is as follows:
@@ -95,10 +101,14 @@ As stated in the README, the tools used were:
 0. `sagemaker`
 1. `pre-commit` which will allow us to have a clean repo.
 <img src="./images/pre-commit.png" width="700"/>
+
 2. `tox` to test and check everything in an isolated enviroment. The `setup.cfg` file uses `python3.10` (same as Docker).
 <img src="./images/tox.png" width="700"/>
+
 3. `poetry` to manage dependencies. The Docker container is built on top of the `pyproject.toml` and `poetry.lock` specifications.
+
 4. **Github actions** repo contains two workflows (dev and preview) as examples. It basically runs tox within the actions agent.
+
 5. `Makefile`, that comes from the cookiecutter, it will allow the developer to make an setup command lines to check the code.
 
 <img src="./images/make.png" width="700"/>

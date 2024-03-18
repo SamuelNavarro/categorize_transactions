@@ -10,13 +10,18 @@ I also provided a `hosted_pipeline.py` file which is the code used to create the
 
 <img src="./images/sagemaker-pipeline.png" width="500"/>
 
+This showcases that dependency between the steps. For the local run, this is stated in the `entrypoint.sh` file, in which the run the files in the desired order.
+
 If you want to create the pipeline in your aws account, you will have to set up your credentials and modify the role in the script.
 
-For the sake of the exercise, I also allowed the use of 'local' storage so the user can see the output in the local filesystem.
+For the sake of the exercise, I also allowed the use of `local` storage so the user can see the output in the local filesystem.
 
 To build the container and run it:
 1. `chmod +x build_docker.sh && ./build_docker.sh`
 2. `chmod +x run_pipeline_locally.sh && ./run_pipeline_locally.sh`
+
+
+You will see the pickle files in the `artifacts` directory.
 
 
 ### Tools
@@ -35,14 +40,14 @@ poetry install -E dev -E test
 ```
 
 
-#### Testing
-I provided a `test_predict.py` file just for the sake of the exercise and to allow us to see the coverage in the repo.
+### Testing
+I provided a `test_predict.py` file that tests the `predict` step.
 
-And to perform test, we use `tox`:
-`tox`
+And to check all the tools, alongside `pytest`, we use `tox`:
+- `tox`
 
 If you only want to run one specific part (linter of formatting for example):
-`tox -e format`
+- `tox -e format`
 
 
 
