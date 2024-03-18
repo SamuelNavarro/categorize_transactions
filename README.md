@@ -26,6 +26,7 @@ You will see the pickle files in the `artifacts` directory.
 
 ### Tools
 I used a combinations of tools that I have found usefull along the way:
+
 0. `docker`
 1. `pre-commit` which will allow us to have a clean repo.
 2. `tox` to test and check everything in an isolated enviroment. The `setup.cfg` file uses `python3.10` (same as Docker).
