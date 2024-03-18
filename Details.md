@@ -8,6 +8,32 @@ which parts is it composed of, which technologies to use at each point, how each
 communicates with the rest of the pipeline, potential issues and how to solve them.
 
 
+2. Part 2 - Demo for one system within the pipeline
+Choose one of the components from the previous part and provide a demo for it. The demo can
+be in the format of code, mock-ups, a video, slides, … In any case, try to make it as close to the
+real thing as possible so we can have a clear idea of how it would look like in the real world if
+you were to implement it. Remember to:
+- Make sure that the code (if any) can be followed through and is well documented
+- Specify assumptions made along the way
+- Justify the decisions you make along the way
+
+
+Data Collection and Storage: Raw data is collected and stored in an Amazon S3 bucket, ensuring scalability and security.
+Data Preprocessing: The raw data is cleaned, transformed, and prepared for training. This involves handling missing values, encoding categorical variables, and normalizing features.
+Model Training and Evaluation: Preprocessed data is used to train ML models. Models are evaluated using a separate validation set to tune hyperparameters and select the best-performing model based on predefined metrics.
+Model Deployment: The selected model is deployed to a production environment, where it serves predictions. AWS Sagemaker is used for deployment, providing a managed environment that simplifies scaling and management.
+Monitoring and Logging: The performance of the deployed model is continuously monitored. Logging mechanisms track prediction requests and model performance to identify any drift or degradation over time.
+
+
+
+3. Part 3 - Design of solution for future pipeline requirements
+How would you change the design of the pipeline if:
+- Predictions needed to be produced in real time (<1s per file)
+- The model had to be retrained on a regular basis taking into account user feedback
+- Different versions of the model could be trained and served on a self-served manner
+
+
+
 I produced a dummy model trained on the data provided. This of course has a data leakage problem since even the transaformations where perfomed on this data. Clearly we can only fit transformations on the training set and apply them later to the test set. But since the imporant part of the MLE is the usage of the model, we will ignore that for now.
 
 
@@ -62,3 +88,4 @@ Now, moving forward, we would have to operate this in a production environment, 
 <img src="./images/sagemaker-pipeline.png" width="500"/>
 
 <img src="./images/cicd-email.png" width="700"/>
+<img src="./images/tox.png" width="700"/>

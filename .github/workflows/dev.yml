@@ -20,7 +20,7 @@ jobs:
     # The type of runner that the job will run on
     strategy:
       matrix:
-        python-versions: [3.9]
+        python-versions: [3.10]
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
 
@@ -43,8 +43,3 @@ jobs:
 
       - name: list files
         run: ls -l .
-
-      - uses: codecov/codecov-action@v1
-        with:
-          fail_ci_if_error: true
-          files: coverage.xml
